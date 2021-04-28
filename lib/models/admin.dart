@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:rewards_network_shared/models/user.dart';
 import 'package:rewards_network_shared/models/user_type.dart';
 
@@ -9,8 +9,13 @@ class AdminAccount implements User{
     this.name,
     this.password,
     this.uid,
+    this.address,
+    this.lastSignedIn,
     this.userType = UserType.admin,
   });
+
+  final String address;
+  final String lastSignedIn;
 
   @override
   final String dateCreated;
