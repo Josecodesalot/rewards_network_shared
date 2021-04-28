@@ -1,15 +1,13 @@
-import 'package:flutter/cupertino.dart';
 import 'package:rewards_network_shared/models/user.dart';
 import 'package:rewards_network_shared/models/user_type.dart';
 
-
-class ClientAccount implements User{
-  const ClientAccount({
-     this.dateCreated,
-     this.email,
-     this.name,
-     this.password,
-     this.uid,
+class ClientAccount implements User {
+  ClientAccount({
+    this.dateCreated,
+    this.email,
+    this.name,
+    this.password,
+    this.uid,
     this.userType = UserType.client,
   });
 
@@ -43,13 +41,40 @@ class ClientAccount implements User{
   }
 
   Map<String, dynamic> toMap() {
-    return <String,String>{
-      'dateCreated': this.dateCreated,
-      'email': this.email,
-      'name': this.name,
-      'password': this.password,
-      'uid': this.uid,
-      'userType': this.userType.makeString(),
+    return <String, String>{
+      'dateCreated': dateCreated,
+      'email': email,
+      'name': name,
+      'password': password,
+      'uid': uid,
+      'userType': userType.makeString(),
     };
+  }
+
+  ClientAccount copyWith({
+    String dateCreated,
+    String email,
+    String name,
+    String password,
+    String uid,
+    UserType userType,
+  }) {
+    if ((dateCreated == null || identical(dateCreated, dateCreated)) &&
+        (email == null || identical(email, email)) &&
+        (name == null || identical(name, name)) &&
+        (password == null || identical(password, password)) &&
+        (uid == null || identical(uid, uid)) &&
+        (userType == null || identical(userType, userType))) {
+      return this;
+    }
+
+    return ClientAccount(
+      dateCreated: dateCreated ?? dateCreated,
+      email: email ?? email,
+      name: name ?? name,
+      password: password ?? password,
+      uid: uid ?? uid,
+      userType: userType ?? userType,
+    );
   }
 }

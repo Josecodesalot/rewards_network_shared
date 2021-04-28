@@ -1,9 +1,9 @@
-abstract class _PlaceClient{
-  const _PlaceClient({this.uid, this.points, this.name});
+abstract class PlaceBy{
+  const PlaceBy({this.uid, this.points, this.name});
   final String uid, points, name;
 }
 
-class PlaceClient implements _PlaceClient{
+class PlaceClient implements PlaceBy{
   const PlaceClient({this.uid, this.points, this.name});
   final String uid, points, name;
 
@@ -25,7 +25,7 @@ class PlaceClient implements _PlaceClient{
 }
 
 //when the manager achieves level 2 access he will get this info
-class PlaceClientLevelTwo implements _PlaceClient{
+class PlaceClientLevelTwo implements PlaceBy{
   const PlaceClientLevelTwo({this.name, this.points, this.uid});
   @override
   final String name;
