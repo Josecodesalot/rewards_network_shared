@@ -19,7 +19,7 @@ class MasterAccount implements User {
   final String uid;
 
   @override
-  UserType userType;
+  final UserType userType;
 
   MasterAccount({
     this.dateCreated,
