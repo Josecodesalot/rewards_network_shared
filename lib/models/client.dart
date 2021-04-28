@@ -59,12 +59,12 @@ class ClientAccount implements User {
     String uid,
     UserType userType,
   }) {
-    if ((dateCreated == null || identical(dateCreated, dateCreated)) &&
-        (email == null || identical(email, email)) &&
-        (name == null || identical(name, name)) &&
-        (password == null || identical(password, password)) &&
-        (uid == null || identical(uid, uid)) &&
-        (userType == null || identical(userType, userType))) {
+    if ((dateCreated == null || identical(dateCreated, this.dateCreated)) &&
+        (email == null || identical(email, this.email)) &&
+        (name == null || identical(name, this.name)) &&
+        (password == null || identical(password, this.password)) &&
+        (uid == null || identical(uid, this.uid)) &&
+        (userType == null || identical(userType, this.userType))) {
       return this;
     }
 
