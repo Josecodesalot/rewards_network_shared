@@ -3,10 +3,10 @@ import 'package:rewards_network_shared/models/client_state.dart';
 import 'package:rewards_network_shared/models/response.dart';
 
 abstract class AuthService{
-  Future<Response<ClientState>> checkAuthStatus(){}
-  Future<Response<ClientState>> signUp(AuthFields authFields){}
-  Future<Response<ClientState>> signIn(AuthFields authFields){}
-  Future<Response<ClientState>> signOut(){}
-  Future<Response<ClientState>> getUserObject(String uid){}
-  Future<Response<ClientState>> signInAnon(){}
+  Future<Response<UserState>> checkAuthStatus(){}
+  Future<Response<UserState>> signUp(AuthFields authFields){}
+  Future<Response<UserState>> signIn(AuthFields authFields){}
+  Future<Response<UserState>> signOut(){}
+  Future<Response<UserState>> getUserObject(String uid){}
+  Future<Response<UserState>> signInAnon(){}
 }

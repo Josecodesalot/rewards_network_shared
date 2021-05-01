@@ -3,13 +3,13 @@ import 'package:rewards_network_shared/models/user.dart';
 import 'package:rewards_network_shared/models/user_status.dart';
 
 @immutable
-class ClientState <T>{
-  ClientState({this.client, this.status});
+class UserState<User>{
+  UserState({this.client, this.status});
 
   final User client;
   final UserStatus status;
 
-  ClientState copyWith({
+  UserState copyWith({
     User client,
     UserStatus status,
   }) {
@@ -18,7 +18,7 @@ class ClientState <T>{
       return this;
     }
 
-    return new ClientState(
+    return new UserState(
       client: client ?? client,
       status: status ?? status,
     );
