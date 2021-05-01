@@ -4,22 +4,22 @@ import 'package:rewards_network_shared/models/user_status.dart';
 
 @immutable
 class UserState<User>{
-  UserState({this.client, this.status});
+  UserState({this.user, this.status});
 
-  final User client;
+  final User user;
   final UserStatus status;
 
   UserState copyWith({
     User client,
     UserStatus status,
   }) {
-    if ((client == null || identical(client, this.client)) &&
+    if ((client == null || identical(client, this.user)) &&
         (status == null || identical(status, this.status))) {
       return this;
     }
 
     return new UserState(
-      client: client ?? client,
+      user: client ?? client,
       status: status ?? status,
     );
   }
