@@ -13,12 +13,8 @@ class UserState<User>{
     User client,
     UserStatus status,
   }) {
-    if ((client == null || identical(client, this.user)) &&
-        (status == null || identical(status, this.status))) {
-      return this;
-    }
 
-    return new UserState(
+    return UserState(
       user: client ?? client,
       status: status ?? status,
     );
