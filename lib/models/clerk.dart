@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:rewards_network_shared/models/user.dart';
 import 'package:rewards_network_shared/models/user_type.dart';
 
