@@ -8,6 +8,7 @@ class ClerkAccount implements User {
     this.name,
     this.password,
     this.uid,
+    this.placeId,
     this.userType = UserType.clerk,
   });
 
@@ -29,9 +30,12 @@ class ClerkAccount implements User {
   @override
   final UserType userType;
 
+  final String placeId;
+
   factory ClerkAccount.fromMap(Map<String, dynamic> map) {
     return new ClerkAccount(
       dateCreated: map['dateCreated'] as String,
+      placeId: map['placeId'],
       email: map['email'] as String,
       name: map['name'] as String,
       password: map['password'] as String,
