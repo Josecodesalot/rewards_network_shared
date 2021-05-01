@@ -40,7 +40,7 @@ class ClerkAccount implements User {
       name: map['name'],
       password: map['password'],
       uid: map['uid'],
-      userType: (map['userType']),
+      userType: (map['userType'] as String).toUserType(),
     );
   }
 
@@ -51,7 +51,7 @@ class ClerkAccount implements User {
       'name': name,
       'password': password,
       'uid': uid,
-      'userType': userType,
+      'userType': userType.makeString(),
     };
   }
 
@@ -72,7 +72,7 @@ class ClerkAccount implements User {
       return this;
     }
 
-    return new ClerkAccount(
+    return  ClerkAccount(
       dateCreated: dateCreated ?? this.dateCreated,
       email: email ?? this.email,
       name: name ?? this.name,
