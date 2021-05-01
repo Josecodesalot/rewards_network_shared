@@ -9,7 +9,6 @@ class OpacityAnimation extends StatelessWidget {
     this.duration = const Duration(milliseconds: 300),
   });
 
-
   final Key key;
   final Tween<double> tween;
   final Duration duration;
