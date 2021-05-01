@@ -7,6 +7,7 @@ class SlideAnimation extends StatelessWidget {
     @required this.tween,
     this.delay,
     this.key,
+    this.curve
     this.duration = const Duration(milliseconds: 300),
   });
 
@@ -15,6 +16,7 @@ class SlideAnimation extends StatelessWidget {
   final Duration delay;
   final Widget child;
   final Key key;
+  final Curve curve;
   
   @override
   Widget build(BuildContext context) {
@@ -23,6 +25,7 @@ class SlideAnimation extends StatelessWidget {
       tween: tween,
       duration: duration,
       delay: delay,
+      curve: curve,
       builder: (_, child, value) {
         return Transform.translate(
           offset: value,

@@ -5,6 +5,7 @@ class OpacityAnimation extends StatelessWidget {
     @required this.child,
     this.tween,
     this.key,
+    this.curve,
     this.duration = const Duration(milliseconds: 300),
   });
 
@@ -13,11 +14,13 @@ class OpacityAnimation extends StatelessWidget {
   final Tween<double> tween;
   final Duration duration;
   final Widget child;
+  final Curve curve;
 
   @override
   Widget build(BuildContext context) {
     return TweenAnimationBuilder<double>(
       key: key,
+      curve: curve,
       tween: tween ?? Tween(begin: 0.0, end: 1.0),
       duration: duration,
       builder: (_, value, child) {
