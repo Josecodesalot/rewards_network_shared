@@ -33,27 +33,26 @@ class ClerkAccount implements User {
   final String placeId;
 
   factory ClerkAccount.fromMap(Map<String, dynamic> map) {
-    return new ClerkAccount(
-      dateCreated: map['dateCreated'] as String,
+    return ClerkAccount(
+      dateCreated: map['dateCreated'],
       placeId: map['placeId'],
-      email: map['email'] as String,
-      name: map['name'] as String,
-      password: map['password'] as String,
-      uid: map['uid'] as String,
-      userType: map['userType'] as UserType,
+      email: map['email'],
+      name: map['name'],
+      password: map['password'],
+      uid: map['uid'],
+      userType: (map['userType']),
     );
   }
 
   Map<String, dynamic> toMap() {
-    // ignore: unnecessary_cast
     return {
-      'dateCreated': this.dateCreated,
-      'email': this.email,
-      'name': this.name,
-      'password': this.password,
-      'uid': this.uid,
-      'userType': this.userType,
-    } as Map<String, dynamic>;
+      'dateCreated': dateCreated,
+      'email': email,
+      'name': name,
+      'password': password,
+      'uid': uid,
+      'userType': userType,
+    };
   }
 
   ClerkAccount copyWith({
