@@ -7,7 +7,7 @@ class SlideAnimation extends StatelessWidget {
     @required this.tween,
     this.delay,
     this.key,
-    this.curve
+    this.curve,
     this.duration = const Duration(milliseconds: 300),
   });
 
