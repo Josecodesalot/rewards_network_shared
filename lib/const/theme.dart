@@ -43,9 +43,3 @@ ThemeData get lightTheme => ThemeData(
       ),
     );
 
-//  InputDecoration inputDecoration(String label) {
-//   return InputDecoration(
-//     labelText: label,
-//     border: OutlineInputBorder(),
-//   );
-// }
