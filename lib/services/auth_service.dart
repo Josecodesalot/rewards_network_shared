@@ -1,5 +1,4 @@
 import 'package:rewards_network_shared/models/auth_fields.dart';
-import 'package:rewards_network_shared/models/client_state.dart';
 import 'package:rewards_network_shared/models/response.dart';
 
 abstract class AuthService<User>{
