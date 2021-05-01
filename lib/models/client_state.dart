@@ -10,13 +10,12 @@ class UserState<User>{
   final UserStatus status;
 
   UserState<User> copyWith({
-    User client,
+    User user,
     UserStatus status,
   }) {
-
     return UserState<User>(
-      user: client ?? client,
-      status: status ?? status,
+      user: user ?? this.user,
+      status: status ?? this.status,
     );
   }
 }
