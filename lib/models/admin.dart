@@ -35,7 +35,7 @@ class AdminAccount implements User{
   @override
   final UserType userType;
 
-  factory AdminAccount.fromMap(Map<String, dynamic> map) {
+  factory AdminAccount.fromMap(map) {
     return AdminAccount(
       dateCreated: map['dateCreated'],
       email: map['email'],

@@ -32,7 +32,7 @@ class ClerkAccount implements User {
 
   final String placeId;
 
-  factory ClerkAccount.fromMap(Map<String, dynamic> map) {
+  factory ClerkAccount.fromMap(map) {
     return ClerkAccount(
       dateCreated: map['dateCreated'],
       placeId: map['placeId'],

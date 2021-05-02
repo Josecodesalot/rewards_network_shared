@@ -32,7 +32,7 @@ class HistoryTicket {
     this.time,
   });
 
-  factory HistoryTicket.fromMap(Map<String, dynamic> map) {
+  factory HistoryTicket.fromMap(map) {
     return new HistoryTicket(
       placeId: map['placeId'],
       key: map['key'],

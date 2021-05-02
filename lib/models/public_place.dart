@@ -15,7 +15,7 @@ class PublicPlace {
     this.phoneNumber,
   });
 
-  factory PublicPlace.fromMap(Map<String, dynamic> map) {
+  factory PublicPlace.fromMap(map) {
     return PublicPlace(
       phoneNumber: map['phoneNumber'],
       placeRating: map['placeRating']!=null?int.tryParse(map['placeRating']):null,
