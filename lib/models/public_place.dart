@@ -1,6 +1,6 @@
 class PublicPlace {
   final int placeRating, numberOfReviews;
-  final String placeId, placeImage, placeName, website, description, adminId;
+  final String placeId, placeImage, placeName, website, description, adminId, location;
 
   const PublicPlace({
     this.placeRating,
@@ -11,6 +11,7 @@ class PublicPlace {
     this.website,
     this.description,
     this.adminId,
+    this.location
   });
 
   factory PublicPlace.fromMap(Map<String, dynamic> map) {
@@ -18,6 +19,7 @@ class PublicPlace {
       placeRating: map['placeRating']!=null?int.tryParse(map['placeRating']):null,
       numberOfReviews: map['numberOfReviews']!=null?int.tryParse(map['numberOfReviews']):null,
       placeId: map['placeId'] as String,
+      location: map['location'],
       placeImage: map['placeImage'] as String,
       placeName: map['placeName'] as String,
       website: map['website'] as String,
@@ -36,6 +38,7 @@ class PublicPlace {
       'website': website,
       'description': description,
       'adminId': adminId,
+      'location': location,
     };
   }
 
@@ -48,20 +51,10 @@ class PublicPlace {
     String website,
     String description,
     String adminId,
+    String location,
   }) {
-    if ((placeRating == null || identical(placeRating, this.placeRating)) &&
-        (numberOfReviews == null ||
-            identical(numberOfReviews, this.numberOfReviews)) &&
-        (placeId == null || identical(placeId, this.placeId)) &&
-        (placeImage == null || identical(placeImage, this.placeImage)) &&
-        (placeName == null || identical(placeName, this.placeName)) &&
-        (website == null || identical(website, this.website)) &&
-        (description == null || identical(description, this.description)) &&
-        (adminId == null || identical(adminId, this.adminId))) {
-      return this;
-    }
-
-    return new PublicPlace(
+    return  PublicPlace(
+      location: location?? this.location,
       placeRating: placeRating ?? this.placeRating,
       numberOfReviews: numberOfReviews ?? this.numberOfReviews,
       placeId: placeId ?? this.placeId,
