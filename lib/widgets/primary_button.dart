@@ -14,8 +14,8 @@ class PrimaryButton extends StatelessWidget {
     this.leadingWidget = const SizedBox(),
     this.endingWidget =  const SizedBox(),
     this.enabled =true,
-    this.mainAxisAlignment,
-    this.crossAxisAlignment,
+    this.mainAxisAlignment = MainAxisAlignment.center,
+    this.crossAxisAlignment = CrossAxisAlignment.center,
   }) : super(key: key);
 
   final Widget leadingWidget;
