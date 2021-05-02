@@ -42,7 +42,7 @@ class PublicPlace {
       'adminId': adminId,
       'location': location,
       'phoneNumber': phoneNumber,
-    };
+    }..removeWhere((key, value) => value == 'null');
   }
 
   PublicPlace copyWith({
