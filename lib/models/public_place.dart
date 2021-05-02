@@ -15,8 +15,8 @@ class PublicPlace {
 
   factory PublicPlace.fromMap(Map<String, dynamic> map) {
     return new PublicPlace(
-      placeRating: int.tryParse(map['placeRating']),
-      numberOfReviews: int.tryParse(map['numberOfReviews']),
+      placeRating: map['placeRating']!=null?int.tryParse(map['placeRating']):null,
+      numberOfReviews: map['numberOfReviews']!=null?int.tryParse(map['numberOfReviews']):null,
       placeId: map['placeId'] as String,
       placeImage: map['placeImage'] as String,
       placeName: map['placeName'] as String,
