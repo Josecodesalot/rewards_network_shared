@@ -62,23 +62,16 @@ class ClerkAccount implements User {
     String password,
     String uid,
     UserType userType,
+    String placeId,
   }) {
-    if ((dateCreated == null || identical(dateCreated, this.dateCreated)) &&
-        (email == null || identical(email, this.email)) &&
-        (name == null || identical(name, this.name)) &&
-        (password == null || identical(password, this.password)) &&
-        (uid == null || identical(uid, this.uid)) &&
-        (userType == null || identical(userType, this.userType))) {
-      return this;
-    }
-
-    return  ClerkAccount(
+    return ClerkAccount(
       dateCreated: dateCreated ?? this.dateCreated,
       email: email ?? this.email,
       name: name ?? this.name,
       password: password ?? this.password,
       uid: uid ?? this.uid,
       userType: userType ?? this.userType,
+      placeId: placeId ?? this.placeId,
     );
   }
 }
