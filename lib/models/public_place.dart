@@ -38,4 +38,38 @@ class PublicPlace {
       'adminId': adminId,
     };
   }
+
+  PublicPlace copyWith({
+    int placeRating,
+    int numberOfReviews,
+    String placeId,
+    String placeImage,
+    String placeName,
+    String website,
+    String description,
+    String adminId,
+  }) {
+    if ((placeRating == null || identical(placeRating, this.placeRating)) &&
+        (numberOfReviews == null ||
+            identical(numberOfReviews, this.numberOfReviews)) &&
+        (placeId == null || identical(placeId, this.placeId)) &&
+        (placeImage == null || identical(placeImage, this.placeImage)) &&
+        (placeName == null || identical(placeName, this.placeName)) &&
+        (website == null || identical(website, this.website)) &&
+        (description == null || identical(description, this.description)) &&
+        (adminId == null || identical(adminId, this.adminId))) {
+      return this;
+    }
+
+    return new PublicPlace(
+      placeRating: placeRating ?? this.placeRating,
+      numberOfReviews: numberOfReviews ?? this.numberOfReviews,
+      placeId: placeId ?? this.placeId,
+      placeImage: placeImage ?? this.placeImage,
+      placeName: placeName ?? this.placeName,
+      website: website ?? this.website,
+      description: description ?? this.description,
+      adminId: adminId ?? this.adminId,
+    );
+  }
 }
