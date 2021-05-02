@@ -1,6 +1,6 @@
 class PublicPlace {
   final int placeRating, numberOfReviews;
-  final String placeId, placeImage, placeName, website, description, adminId, location;
+  final String placeId, placeImage, placeName, website, description, adminId, location, phoneNumber;
 
   const PublicPlace({
     this.placeRating,
@@ -11,11 +11,13 @@ class PublicPlace {
     this.website,
     this.description,
     this.adminId,
-    this.location
+    this.location,
+    this.phoneNumber,
   });
 
   factory PublicPlace.fromMap(Map<String, dynamic> map) {
-    return new PublicPlace(
+    return PublicPlace(
+      phoneNumber: map['phoneNumber'],
       placeRating: map['placeRating']!=null?int.tryParse(map['placeRating']):null,
       numberOfReviews: map['numberOfReviews']!=null?int.tryParse(map['numberOfReviews']):null,
       placeId: map['placeId'] as String,
@@ -39,6 +41,7 @@ class PublicPlace {
       'description': description,
       'adminId': adminId,
       'location': location,
+      'phoneNumber': phoneNumber,
     };
   }
 
@@ -52,8 +55,10 @@ class PublicPlace {
     String description,
     String adminId,
     String location,
+    String phoneNumber,
   }) {
     return  PublicPlace(
+      phoneNumber: phoneNumber??this.phoneNumber,
       location: location?? this.location,
       placeRating: placeRating ?? this.placeRating,
       numberOfReviews: numberOfReviews ?? this.numberOfReviews,
