@@ -11,7 +11,7 @@ class PrimaryButton extends StatelessWidget {
     this.elevation,
     this.width,
     this.textColor,
-    this.enabled =false,
+    this.enabled =true,
   }) : super(key: key);
 
   final bool enabled;
@@ -28,7 +28,7 @@ class PrimaryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: this.onTap,
+      onPressed: enabled?onTap:(){},
       style: ElevatedButton.styleFrom(
           shape: StadiumBorder()
       ).copyWith(
