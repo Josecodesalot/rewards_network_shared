@@ -11,9 +11,15 @@ class PrimaryButton extends StatelessWidget {
     this.elevation,
     this.width,
     this.textColor,
+    this.leadingWidget = const SizedBox(),
+    this.endingWidget =  const SizedBox(),
     this.enabled =true,
+    this.mainAxisAlignment,
+    this.crossAxisAlignment,
   }) : super(key: key);
 
+  final Widget leadingWidget;
+  final Widget endingWidget;
   final bool enabled;
   final double margin;
   final double padding;
@@ -23,6 +29,8 @@ class PrimaryButton extends StatelessWidget {
   final String title;
   final Color color;
   final Color textColor;
+  final MainAxisAlignment mainAxisAlignment;
+  final CrossAxisAlignment crossAxisAlignment;
 
 
   @override
@@ -37,15 +45,24 @@ class PrimaryButton extends StatelessWidget {
       child: Container(
         constraints: BoxConstraints.expand(height: 50),
         alignment: Alignment.center,
-        child: Text(
-          title.toUpperCase(),
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 14,
-            letterSpacing: 1.2,
-            fontWeight: FontWeight.w600,
-            color: textColor ??Colors.white,
-          ),
+        child: Row(
+          mainAxisAlignment: mainAxisAlignment,
+          crossAxisAlignment: crossAxisAlignment,
+          children: [
+            leadingWidget,
+            Text(
+              title.toUpperCase(),
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 14,
+                letterSpacing: 1.2,
+                fontWeight: FontWeight.w600,
+                color: textColor ??Colors.white,
+              ),
+            ),
+
+            endingWidget
+          ],
         ),
       ),
     );
