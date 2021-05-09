@@ -7,7 +7,7 @@ enum UserType{
 
 extension xUserType on UserType{
   String makeString(){
-    return toString().substring(this.toString().indexOf('.') + 1);
+    return toString().substring(toString().indexOf('.') + 1);
   }
 }
 

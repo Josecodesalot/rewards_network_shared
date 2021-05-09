@@ -33,7 +33,7 @@ class HistoryTicket {
   });
 
   factory HistoryTicket.fromMap(map) {
-    return new HistoryTicket(
+    return HistoryTicket(
       placeId: map['placeId'],
       key: map['key'],
       type: map['type'],
@@ -50,21 +50,71 @@ class HistoryTicket {
     );
   }
 
-  Map<String, dynamic> toMap() {
+  Map<String, String> toMap() {
     return {
-      'placeId': this.placeId,
-      'key': this.key,
-      'type': this.type,
-      'guestId': this.guestId,
-      'guestName': this.guestName,
-      'startingPoints': this.startingPoints,
-      'awardingPoints': this.awardingPoints,
-      'endingPoints': this.endingPoints,
-      'subTotal': this.subTotal,
-      'clerkName': this.clerkName,
-      'clerkId': this.clerkId,
-      'comments': this.comments,
-      'time': this.time,
+      'placeId': placeId,
+      'key': key,
+      'type': type,
+      'guestId': guestId,
+      'guestName': guestName,
+      'startingPoints': startingPoints,
+      'awardingPoints': awardingPoints,
+      'endingPoints': endingPoints,
+      'subTotal': subTotal,
+      'clerkName': clerkName,
+      'clerkId': clerkId,
+      'comments': comments,
+      'time': time,
     };
+  }
+
+  HistoryTicket copyWith({
+    String placeId,
+    String key,
+    String type,
+    String guestId,
+    String guestName,
+    String startingPoints,
+    String awardingPoints,
+    String endingPoints,
+    String subTotal,
+    String clerkName,
+    String clerkId,
+    String comments,
+    String time,
+  }) {
+    if ((placeId == null || identical(placeId, this.placeId)) &&
+        (key == null || identical(key, this.key)) &&
+        (type == null || identical(type, this.type)) &&
+        (guestId == null || identical(guestId, this.guestId)) &&
+        (guestName == null || identical(guestName, this.guestName)) &&
+        (startingPoints == null ||
+            identical(startingPoints, this.startingPoints)) &&
+        (awardingPoints == null ||
+            identical(awardingPoints, this.awardingPoints)) &&
+        (endingPoints == null || identical(endingPoints, this.endingPoints)) &&
+        (subTotal == null || identical(subTotal, this.subTotal)) &&
+        (clerkName == null || identical(clerkName, this.clerkName)) &&
+        (clerkId == null || identical(clerkId, this.clerkId)) &&
+        (comments == null || identical(comments, this.comments)) &&
+        (time == null || identical(time, this.time))) {
+      return this;
+    }
+
+    return HistoryTicket(
+      placeId: placeId ?? this.placeId,
+      key: key ?? this.key,
+      type: type ?? this.type,
+      guestId: guestId ?? this.guestId,
+      guestName: guestName ?? this.guestName,
+      startingPoints: startingPoints ?? this.startingPoints,
+      awardingPoints: awardingPoints ?? this.awardingPoints,
+      endingPoints: endingPoints ?? this.endingPoints,
+      subTotal: subTotal ?? this.subTotal,
+      clerkName: clerkName ?? this.clerkName,
+      clerkId: clerkId ?? this.clerkId,
+      comments: comments ?? this.comments,
+      time: time ?? this.time,
+    );
   }
 }

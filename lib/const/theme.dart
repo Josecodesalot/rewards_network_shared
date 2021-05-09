@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 // turn into const
-
 TextTheme get baseTheme => GoogleFonts.alataTextTheme();
 TextStyle get baseStyle => GoogleFonts.alata();
 
 Color textColor = Colors.black;
-Color primary = Colors.green[400];
+Color primary = Color(0xFF66BB6A);
 Color loadingGreen = Colors.green;
 
 BorderRadius get borderRadius => BorderRadius.circular(32);
